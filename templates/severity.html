@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Severity Map</title>
+    <!-- Bootstrap for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3JpbWV8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        .map-container {
+            height: 600px;
+            width: 100%;
+            margin: 20px 0;
+            background-color: #333;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        h1 {
+      color: #ffc107;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4 text-center">Crime Severity Map</h1>
+
+        <form method="POST">
+            <div class="form-group mb-3">
+                <label for="min_severity">Minimum Severity (%): <span id="minVal">{{ min_val }}</span></label>
+                <input type="range" class="form-range" id="min_severity" name="min_severity" value="{{ min_val }}" min="0" max="100" oninput="updateMinVal(this.value)">
+            </div>
+            <div class="form-group mb-3">
+                <label for="max_severity">Maximum Severity (%): <span id="maxVal">{{ max_val }}</span></label>
+                <input type="range" class="form-range" id="max_severity" name="max_severity" value="{{ max_val }}" min="0" max="100" oninput="updateMaxVal(this.value)">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Generate Map</button>
+        </form>
+
+        <div class="map-container">
+            {% if crime_map %}
+                <div>{{ crime_map|safe }}</div>
+            {% else %}
+                <p>No map generated. Please adjust the severity range and submit.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery for responsiveness -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function updateMinVal(val) {
+            document.getElementById('minVal').innerText = val;
+        }
+        function updateMaxVal(val) {
+            document.getElementById('maxVal').innerText = val;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cc46e9bd177593cf152350d7fd35a1b0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cc46e9bd177593cf152350d7fd35a1b0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cc46e9bd177593cf152350d7fd35a1b0 = L.map(
+                "map_cc46e9bd177593cf152350d7fd35a1b0",
+                {
+                    center: [41.86085428833333, -87.71188376166667],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_db258a737a2eb1f518b4c46462e6f484 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_db258a737a2eb1f518b4c46462e6f484.addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var marker_81b4558fe28eabe1856efcc6ec2b5e7b = L.marker(
+                [41.88350019, -87.6278767],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_2949ae64617c7b5e4e5e26dbb2432314 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_957f4a3b62370f0fa8f3a85874b74125 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7ef800fcc164e9d01c7a012eca427a71 = $(`<div id="html_7ef800fcc164e9d01c7a012eca427a71" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 30-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.88350019, Longitude: -87.6278767             </div>`)[0];
+                popup_957f4a3b62370f0fa8f3a85874b74125.setContent(html_7ef800fcc164e9d01c7a012eca427a71);
+            
+        
+
+        marker_81b4558fe28eabe1856efcc6ec2b5e7b.bindPopup(popup_957f4a3b62370f0fa8f3a85874b74125)
+        ;
+
+        
+    
+    
+                marker_81b4558fe28eabe1856efcc6ec2b5e7b.setIcon(icon_2949ae64617c7b5e4e5e26dbb2432314);
+            
+    
+            var marker_7570562f5607f872275145837331e03d = L.marker(
+                [41.88350019, -87.6278767],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_b884c238606805d6541f62d22a5e7079 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ff3851c796bc49e7e1f994d50be2d1ee = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ce038b6834ff4cc43a99711478f43ec8 = $(`<div id="html_ce038b6834ff4cc43a99711478f43ec8" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 01-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.88350019, Longitude: -87.6278767             </div>`)[0];
+                popup_ff3851c796bc49e7e1f994d50be2d1ee.setContent(html_ce038b6834ff4cc43a99711478f43ec8);
+            
+        
+
+        marker_7570562f5607f872275145837331e03d.bindPopup(popup_ff3851c796bc49e7e1f994d50be2d1ee)
+        ;
+
+        
+    
+    
+                marker_7570562f5607f872275145837331e03d.setIcon(icon_b884c238606805d6541f62d22a5e7079);
+            
+    
+            var marker_db7666ad3a732ec0379346c23efc291c = L.marker(
+                [41.88350019, -87.6278767],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_1dd651f1a076b8cbd199daaf942fca3c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e350481aa517f1e840080bec37d73387 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a2f18461249b0e56e0ef277ca6d47d60 = $(`<div id="html_a2f18461249b0e56e0ef277ca6d47d60" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 02-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.88350019, Longitude: -87.6278767             </div>`)[0];
+                popup_e350481aa517f1e840080bec37d73387.setContent(html_a2f18461249b0e56e0ef277ca6d47d60);
+            
+        
+
+        marker_db7666ad3a732ec0379346c23efc291c.bindPopup(popup_e350481aa517f1e840080bec37d73387)
+        ;
+
+        
+    
+    
+                marker_db7666ad3a732ec0379346c23efc291c.setIcon(icon_1dd651f1a076b8cbd199daaf942fca3c);
+            
+    
+            var marker_334c83d9af0b70b86698de5f7a13ccb3 = L.marker(
+                [41.88350019, -87.6278767],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_b426fb7261bf7fe7513d2f78a0510b6c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00cf6002526c322da0c3245aacd4c9f4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4011cbd4710ad5db7ccd30903de0c659 = $(`<div id="html_4011cbd4710ad5db7ccd30903de0c659" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 03-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.88350019, Longitude: -87.6278767             </div>`)[0];
+                popup_00cf6002526c322da0c3245aacd4c9f4.setContent(html_4011cbd4710ad5db7ccd30903de0c659);
+            
+        
+
+        marker_334c83d9af0b70b86698de5f7a13ccb3.bindPopup(popup_00cf6002526c322da0c3245aacd4c9f4)
+        ;
+
+        
+    
+    
+                marker_334c83d9af0b70b86698de5f7a13ccb3.setIcon(icon_b426fb7261bf7fe7513d2f78a0510b6c);
+            
+    
+            var marker_c17b2bef90a81cd8a850202622bf04d9 = L.marker(
+                [41.88350019, -87.6278767],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_6b000104b5c37da5fe2125fa6e6c87d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1fc0c23e3de2792f9809db919ce9908 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_226c73ff37c09e28c1e74cac2f7d0d39 = $(`<div id="html_226c73ff37c09e28c1e74cac2f7d0d39" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 04-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.88350019, Longitude: -87.6278767             </div>`)[0];
+                popup_b1fc0c23e3de2792f9809db919ce9908.setContent(html_226c73ff37c09e28c1e74cac2f7d0d39);
+            
+        
+
+        marker_c17b2bef90a81cd8a850202622bf04d9.bindPopup(popup_b1fc0c23e3de2792f9809db919ce9908)
+        ;
+
+        
+    
+    
+                marker_c17b2bef90a81cd8a850202622bf04d9.setIcon(icon_6b000104b5c37da5fe2125fa6e6c87d0);
+            
+    
+            var marker_b8dc045910eae53f2eb83a39bebf3c9a = L.marker(
+                [41.74271022, -87.63408818],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_a3c05e10d5a4bb9333f9adc38b7142a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68ed95e16a1289628cadb19f2c6d85d9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_34f156f3b767477be1901d116a3d0e67 = $(`<div id="html_34f156f3b767477be1901d116a3d0e67" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 21-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.74271022, Longitude: -87.63408818             </div>`)[0];
+                popup_68ed95e16a1289628cadb19f2c6d85d9.setContent(html_34f156f3b767477be1901d116a3d0e67);
+            
+        
+
+        marker_b8dc045910eae53f2eb83a39bebf3c9a.bindPopup(popup_68ed95e16a1289628cadb19f2c6d85d9)
+        ;
+
+        
+    
+    
+                marker_b8dc045910eae53f2eb83a39bebf3c9a.setIcon(icon_a3c05e10d5a4bb9333f9adc38b7142a1);
+            
+    
+            var marker_cc2372863191272404eb294ffe97b57d = L.marker(
+                [41.74271022, -87.63408818],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_d6531c6bf6eee30fd38a6c14316671aa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_06da2a3e11c46612dbba3bc48d8921ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1e692ab5fed6506f00fc3756a0689e41 = $(`<div id="html_1e692ab5fed6506f00fc3756a0689e41" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 22-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.74271022, Longitude: -87.63408818             </div>`)[0];
+                popup_06da2a3e11c46612dbba3bc48d8921ed.setContent(html_1e692ab5fed6506f00fc3756a0689e41);
+            
+        
+
+        marker_cc2372863191272404eb294ffe97b57d.bindPopup(popup_06da2a3e11c46612dbba3bc48d8921ed)
+        ;
+
+        
+    
+    
+                marker_cc2372863191272404eb294ffe97b57d.setIcon(icon_d6531c6bf6eee30fd38a6c14316671aa);
+            
+    
+            var marker_45d07cc3c3df881e0014029e480e8dda = L.marker(
+                [41.74271022, -87.63408818],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_c082036e7f9159dabb8620571c45413f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d82b7ad529c55e79a81ae3c59a2539bd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eaa1c79059b7bf49020dbd56386b985a = $(`<div id="html_eaa1c79059b7bf49020dbd56386b985a" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 23-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.74271022, Longitude: -87.63408818             </div>`)[0];
+                popup_d82b7ad529c55e79a81ae3c59a2539bd.setContent(html_eaa1c79059b7bf49020dbd56386b985a);
+            
+        
+
+        marker_45d07cc3c3df881e0014029e480e8dda.bindPopup(popup_d82b7ad529c55e79a81ae3c59a2539bd)
+        ;
+
+        
+    
+    
+                marker_45d07cc3c3df881e0014029e480e8dda.setIcon(icon_c082036e7f9159dabb8620571c45413f);
+            
+    
+            var marker_c5d4cb2ab2acea94992528ab6e26353d = L.marker(
+                [41.74271022, -87.63408818],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_4b03b2d588d70647fb26d2293527c76a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e05ed92a82d0739df95803c44a53b3d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dde35b6290f2b3479c1f468a637feb04 = $(`<div id="html_dde35b6290f2b3479c1f468a637feb04" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 24-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.74271022, Longitude: -87.63408818             </div>`)[0];
+                popup_6e05ed92a82d0739df95803c44a53b3d.setContent(html_dde35b6290f2b3479c1f468a637feb04);
+            
+        
+
+        marker_c5d4cb2ab2acea94992528ab6e26353d.bindPopup(popup_6e05ed92a82d0739df95803c44a53b3d)
+        ;
+
+        
+    
+    
+                marker_c5d4cb2ab2acea94992528ab6e26353d.setIcon(icon_4b03b2d588d70647fb26d2293527c76a);
+            
+    
+            var marker_1f03040a983f0f652a2975d7a1e1794f = L.marker(
+                [41.74271022, -87.63408818],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_198fb2779afdfc30bb96f7608c0c9650 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_20f98eb1322a89d13b4b81999f2578cd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_679e1f000fcc262fc7644821cab87ac0 = $(`<div id="html_679e1f000fcc262fc7644821cab87ac0" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 25-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.74271022, Longitude: -87.63408818             </div>`)[0];
+                popup_20f98eb1322a89d13b4b81999f2578cd.setContent(html_679e1f000fcc262fc7644821cab87ac0);
+            
+        
+
+        marker_1f03040a983f0f652a2975d7a1e1794f.bindPopup(popup_20f98eb1322a89d13b4b81999f2578cd)
+        ;
+
+        
+    
+    
+                marker_1f03040a983f0f652a2975d7a1e1794f.setIcon(icon_198fb2779afdfc30bb96f7608c0c9650);
+            
+    
+            var marker_dd8845d3cac2da6b82b2ee4c1e7a8a25 = L.marker(
+                [41.90966425, -87.74272882],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_e1092f2ea5dd28c1830ad55dcb116766 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d31010eacd551b15303d9799b327642e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_15a9f95a9debea604e3ebfb459f99148 = $(`<div id="html_15a9f95a9debea604e3ebfb459f99148" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 03-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.90966425, Longitude: -87.74272882             </div>`)[0];
+                popup_d31010eacd551b15303d9799b327642e.setContent(html_15a9f95a9debea604e3ebfb459f99148);
+            
+        
+
+        marker_dd8845d3cac2da6b82b2ee4c1e7a8a25.bindPopup(popup_d31010eacd551b15303d9799b327642e)
+        ;
+
+        
+    
+    
+                marker_dd8845d3cac2da6b82b2ee4c1e7a8a25.setIcon(icon_e1092f2ea5dd28c1830ad55dcb116766);
+            
+    
+            var marker_e7c92902d7f098aa0eda2620597e12f3 = L.marker(
+                [41.90966425, -87.74272882],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_8726c8c4b7cbc027f83400dbc0043056 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7a67bb597e2d8f471e3b4102e33ab549 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e12df1e240ce86e398b23c153ab03320 = $(`<div id="html_e12df1e240ce86e398b23c153ab03320" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 04-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.90966425, Longitude: -87.74272882             </div>`)[0];
+                popup_7a67bb597e2d8f471e3b4102e33ab549.setContent(html_e12df1e240ce86e398b23c153ab03320);
+            
+        
+
+        marker_e7c92902d7f098aa0eda2620597e12f3.bindPopup(popup_7a67bb597e2d8f471e3b4102e33ab549)
+        ;
+
+        
+    
+    
+                marker_e7c92902d7f098aa0eda2620597e12f3.setIcon(icon_8726c8c4b7cbc027f83400dbc0043056);
+            
+    
+            var marker_ef62f5fc4a3b913cdfd0d3982fd0a1f2 = L.marker(
+                [41.90966425, -87.74272882],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_45afe885bf3f6d7decb1419aba196dac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ff7d32639821579c26416bef64d1ee2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6bfaf646af6492dc03730c1e4f426a2f = $(`<div id="html_6bfaf646af6492dc03730c1e4f426a2f" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 05-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.90966425, Longitude: -87.74272882             </div>`)[0];
+                popup_8ff7d32639821579c26416bef64d1ee2.setContent(html_6bfaf646af6492dc03730c1e4f426a2f);
+            
+        
+
+        marker_ef62f5fc4a3b913cdfd0d3982fd0a1f2.bindPopup(popup_8ff7d32639821579c26416bef64d1ee2)
+        ;
+
+        
+    
+    
+                marker_ef62f5fc4a3b913cdfd0d3982fd0a1f2.setIcon(icon_45afe885bf3f6d7decb1419aba196dac);
+            
+    
+            var marker_350a415cb5f8bdfad2ecb8aec3620946 = L.marker(
+                [41.90966425, -87.74272882],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_4005beb774a70695d3a487ae54c3cbb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_181d0f255e30c20d5863e126b2f3e378 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0fcb201878a568038d341578e5d72653 = $(`<div id="html_0fcb201878a568038d341578e5d72653" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 06-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.90966425, Longitude: -87.74272882             </div>`)[0];
+                popup_181d0f255e30c20d5863e126b2f3e378.setContent(html_0fcb201878a568038d341578e5d72653);
+            
+        
+
+        marker_350a415cb5f8bdfad2ecb8aec3620946.bindPopup(popup_181d0f255e30c20d5863e126b2f3e378)
+        ;
+
+        
+    
+    
+                marker_350a415cb5f8bdfad2ecb8aec3620946.setIcon(icon_4005beb774a70695d3a487ae54c3cbb9);
+            
+    
+            var marker_084acbc8c3c0b5cb8697b2678ef81e84 = L.marker(
+                [41.90966425, -87.74272882],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_6cfcf8060cebd5a5c7a848aa5d289c9b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d252e59723faa9e5907c45dfd764e53 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7ab877baa767285776304fdf59366eb = $(`<div id="html_a7ab877baa767285776304fdf59366eb" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 07-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.90966425, Longitude: -87.74272882             </div>`)[0];
+                popup_3d252e59723faa9e5907c45dfd764e53.setContent(html_a7ab877baa767285776304fdf59366eb);
+            
+        
+
+        marker_084acbc8c3c0b5cb8697b2678ef81e84.bindPopup(popup_3d252e59723faa9e5907c45dfd764e53)
+        ;
+
+        
+    
+    
+                marker_084acbc8c3c0b5cb8697b2678ef81e84.setIcon(icon_6cfcf8060cebd5a5c7a848aa5d289c9b);
+            
+    
+            var marker_62a8dabc65ce48d1a346467a106886b8 = L.marker(
+                [41.75459296, -87.74152854],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_947666ed08286b80d2669740d22dcaaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a919d749bb176b2c9a7ec28bd4e84961 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7d1e0ca074e9074d87edb73cf840ee5c = $(`<div id="html_7d1e0ca074e9074d87edb73cf840ee5c" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 02-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.75459296, Longitude: -87.74152854             </div>`)[0];
+                popup_a919d749bb176b2c9a7ec28bd4e84961.setContent(html_7d1e0ca074e9074d87edb73cf840ee5c);
+            
+        
+
+        marker_62a8dabc65ce48d1a346467a106886b8.bindPopup(popup_a919d749bb176b2c9a7ec28bd4e84961)
+        ;
+
+        
+    
+    
+                marker_62a8dabc65ce48d1a346467a106886b8.setIcon(icon_947666ed08286b80d2669740d22dcaaf);
+            
+    
+            var marker_2109f09733aa9e753860784b805fb180 = L.marker(
+                [41.75459296, -87.74152854],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_fca316366b4b35340c6974c0d56d2cfa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfe312c343d9197e239e047c7d69720c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c798e689490589fb8184095e818fdcbd = $(`<div id="html_c798e689490589fb8184095e818fdcbd" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 03-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.75459296, Longitude: -87.74152854             </div>`)[0];
+                popup_dfe312c343d9197e239e047c7d69720c.setContent(html_c798e689490589fb8184095e818fdcbd);
+            
+        
+
+        marker_2109f09733aa9e753860784b805fb180.bindPopup(popup_dfe312c343d9197e239e047c7d69720c)
+        ;
+
+        
+    
+    
+                marker_2109f09733aa9e753860784b805fb180.setIcon(icon_fca316366b4b35340c6974c0d56d2cfa);
+            
+    
+            var marker_67f16fbc68f098d156d55547b0476498 = L.marker(
+                [41.75459296, -87.74152854],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_f1c7c46bc1f2dd138950da8a6997ecb9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_637a14f95dac528079f40a7640fe0ffa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ae37ad5c6fd9548e3e47cf938278444c = $(`<div id="html_ae37ad5c6fd9548e3e47cf938278444c" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 04-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.75459296, Longitude: -87.74152854             </div>`)[0];
+                popup_637a14f95dac528079f40a7640fe0ffa.setContent(html_ae37ad5c6fd9548e3e47cf938278444c);
+            
+        
+
+        marker_67f16fbc68f098d156d55547b0476498.bindPopup(popup_637a14f95dac528079f40a7640fe0ffa)
+        ;
+
+        
+    
+    
+                marker_67f16fbc68f098d156d55547b0476498.setIcon(icon_f1c7c46bc1f2dd138950da8a6997ecb9);
+            
+    
+            var marker_9fda008a3366e9989a5674392e2a0aa3 = L.marker(
+                [41.75459296, -87.74152854],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_a3912dd79cffb018165eb510fb8b8ebd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f99854ad679f86b6f26ba0aab4714cc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7246a10f4e78324a36358c3a819c5907 = $(`<div id="html_7246a10f4e78324a36358c3a819c5907" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 05-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.75459296, Longitude: -87.74152854             </div>`)[0];
+                popup_5f99854ad679f86b6f26ba0aab4714cc.setContent(html_7246a10f4e78324a36358c3a819c5907);
+            
+        
+
+        marker_9fda008a3366e9989a5674392e2a0aa3.bindPopup(popup_5f99854ad679f86b6f26ba0aab4714cc)
+        ;
+
+        
+    
+    
+                marker_9fda008a3366e9989a5674392e2a0aa3.setIcon(icon_a3912dd79cffb018165eb510fb8b8ebd);
+            
+    
+            var marker_5ece7025286cae3060fc259c1a05a6cd = L.marker(
+                [41.75459296, -87.74152854],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_26172cab2b6b26753134e6636ae562ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e19cf4ea476635ab54b5c4d4ca6de04e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_72d1f5293df1ba13fd4ee7441afa4590 = $(`<div id="html_72d1f5293df1ba13fd4ee7441afa4590" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 06-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.75459296, Longitude: -87.74152854             </div>`)[0];
+                popup_e19cf4ea476635ab54b5c4d4ca6de04e.setContent(html_72d1f5293df1ba13fd4ee7441afa4590);
+            
+        
+
+        marker_5ece7025286cae3060fc259c1a05a6cd.bindPopup(popup_e19cf4ea476635ab54b5c4d4ca6de04e)
+        ;
+
+        
+    
+    
+                marker_5ece7025286cae3060fc259c1a05a6cd.setIcon(icon_26172cab2b6b26753134e6636ae562ae);
+            
+    
+            var marker_96606d5bae3e1f02a2a1efc14d183753 = L.marker(
+                [41.97676298, -87.90098372],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_c219ae32f8daec51c05261d60c192abf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ea99a5722bbcb33d4f35262486cba75 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9dab9008a4da455eb2945dd92fcc8e64 = $(`<div id="html_9dab9008a4da455eb2945dd92fcc8e64" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 30-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: CRIMINAL TRESPASS<br>                 📍 Location: Latitude: 41.97676298, Longitude: -87.90098372             </div>`)[0];
+                popup_1ea99a5722bbcb33d4f35262486cba75.setContent(html_9dab9008a4da455eb2945dd92fcc8e64);
+            
+        
+
+        marker_96606d5bae3e1f02a2a1efc14d183753.bindPopup(popup_1ea99a5722bbcb33d4f35262486cba75)
+        ;
+
+        
+    
+    
+                marker_96606d5bae3e1f02a2a1efc14d183753.setIcon(icon_c219ae32f8daec51c05261d60c192abf);
+            
+    
+            var marker_63b334cd800825321d78449ac4185878 = L.marker(
+                [41.97676298, -87.90098372],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_2646813c47dfab8a9c97377d13f6cc39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b33f729d3ab1a7825d87c02601901350 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f8515624d4597fb4d7390fae7fe904d6 = $(`<div id="html_f8515624d4597fb4d7390fae7fe904d6" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 01-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: CRIMINAL TRESPASS<br>                 📍 Location: Latitude: 41.97676298, Longitude: -87.90098372             </div>`)[0];
+                popup_b33f729d3ab1a7825d87c02601901350.setContent(html_f8515624d4597fb4d7390fae7fe904d6);
+            
+        
+
+        marker_63b334cd800825321d78449ac4185878.bindPopup(popup_b33f729d3ab1a7825d87c02601901350)
+        ;
+
+        
+    
+    
+                marker_63b334cd800825321d78449ac4185878.setIcon(icon_2646813c47dfab8a9c97377d13f6cc39);
+            
+    
+            var marker_db43ec2ad18bebc3eb2604afe2e491e1 = L.marker(
+                [41.97676298, -87.90098372],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_fa3e16a0ace1734ba3f95cbfcf1f2be6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_512b36d9771592c226edf4474b27d455 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f973efab58461ef94191286142f23fa8 = $(`<div id="html_f973efab58461ef94191286142f23fa8" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 02-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: CRIMINAL TRESPASS<br>                 📍 Location: Latitude: 41.97676298, Longitude: -87.90098372             </div>`)[0];
+                popup_512b36d9771592c226edf4474b27d455.setContent(html_f973efab58461ef94191286142f23fa8);
+            
+        
+
+        marker_db43ec2ad18bebc3eb2604afe2e491e1.bindPopup(popup_512b36d9771592c226edf4474b27d455)
+        ;
+
+        
+    
+    
+                marker_db43ec2ad18bebc3eb2604afe2e491e1.setIcon(icon_fa3e16a0ace1734ba3f95cbfcf1f2be6);
+            
+    
+            var marker_4330b3ffad55a4c03b9232b445ac62be = L.marker(
+                [41.97676298, -87.90098372],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_d13b73f3035427aa81307c4defaa3979 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4bc6a12b210e85ee9bd08cccc0f0d644 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_23e8f8f02d137fb17708c1ab68e66cd6 = $(`<div id="html_23e8f8f02d137fb17708c1ab68e66cd6" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 03-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: CRIMINAL TRESPASS<br>                 📍 Location: Latitude: 41.97676298, Longitude: -87.90098372             </div>`)[0];
+                popup_4bc6a12b210e85ee9bd08cccc0f0d644.setContent(html_23e8f8f02d137fb17708c1ab68e66cd6);
+            
+        
+
+        marker_4330b3ffad55a4c03b9232b445ac62be.bindPopup(popup_4bc6a12b210e85ee9bd08cccc0f0d644)
+        ;
+
+        
+    
+    
+                marker_4330b3ffad55a4c03b9232b445ac62be.setIcon(icon_d13b73f3035427aa81307c4defaa3979);
+            
+    
+            var marker_7c80a8079e798afb53faf849f60a4e7d = L.marker(
+                [41.97676298, -87.90098372],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_bc6f852a9e1dda50b7f947eb961d71b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fea7e2f7d7f2580b38dccd8b5897c7f3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eba74fb3b1d7b9a7d85d059c9a6ee3d6 = $(`<div id="html_eba74fb3b1d7b9a7d85d059c9a6ee3d6" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 04-10-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: CRIMINAL TRESPASS<br>                 📍 Location: Latitude: 41.97676298, Longitude: -87.90098372             </div>`)[0];
+                popup_fea7e2f7d7f2580b38dccd8b5897c7f3.setContent(html_eba74fb3b1d7b9a7d85d059c9a6ee3d6);
+            
+        
+
+        marker_7c80a8079e798afb53faf849f60a4e7d.bindPopup(popup_fea7e2f7d7f2580b38dccd8b5897c7f3)
+        ;
+
+        
+    
+    
+                marker_7c80a8079e798afb53faf849f60a4e7d.setIcon(icon_bc6f852a9e1dda50b7f947eb961d71b7);
+            
+    
+            var marker_b64123af24224c8c4ca5c7f98d232bfb = L.marker(
+                [41.89789513, -87.62409661],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_18bb86060a89ab51d309d5c845af6823 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8fad4165fe8bcea52ce57cf2522b0f20 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5acdc0745a0a20ab692c0cd115d5204c = $(`<div id="html_5acdc0745a0a20ab692c0cd115d5204c" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 12-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.89789513, Longitude: -87.62409661             </div>`)[0];
+                popup_8fad4165fe8bcea52ce57cf2522b0f20.setContent(html_5acdc0745a0a20ab692c0cd115d5204c);
+            
+        
+
+        marker_b64123af24224c8c4ca5c7f98d232bfb.bindPopup(popup_8fad4165fe8bcea52ce57cf2522b0f20)
+        ;
+
+        
+    
+    
+                marker_b64123af24224c8c4ca5c7f98d232bfb.setIcon(icon_18bb86060a89ab51d309d5c845af6823);
+            
+    
+            var marker_4a9d1ed368a24af89af43f96d6686120 = L.marker(
+                [41.89789513, -87.62409661],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_848d77912cd911da20d7d1d75b49af37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a934eacdb7c7193bf7e4453bea7935a0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_be8a9247c974840f3cc57078b47c837d = $(`<div id="html_be8a9247c974840f3cc57078b47c837d" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 13-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.89789513, Longitude: -87.62409661             </div>`)[0];
+                popup_a934eacdb7c7193bf7e4453bea7935a0.setContent(html_be8a9247c974840f3cc57078b47c837d);
+            
+        
+
+        marker_4a9d1ed368a24af89af43f96d6686120.bindPopup(popup_a934eacdb7c7193bf7e4453bea7935a0)
+        ;
+
+        
+    
+    
+                marker_4a9d1ed368a24af89af43f96d6686120.setIcon(icon_848d77912cd911da20d7d1d75b49af37);
+            
+    
+            var marker_d000bc5dd9341f8c0862bc15a9a388d4 = L.marker(
+                [41.89789513, -87.62409661],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_1e38b4c9418c81a041cd39562fe45f46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f98dda295b3e553cd6e707993efe08b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8046d749c5b97e8df136999049c7831e = $(`<div id="html_8046d749c5b97e8df136999049c7831e" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 14-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.89789513, Longitude: -87.62409661             </div>`)[0];
+                popup_2f98dda295b3e553cd6e707993efe08b.setContent(html_8046d749c5b97e8df136999049c7831e);
+            
+        
+
+        marker_d000bc5dd9341f8c0862bc15a9a388d4.bindPopup(popup_2f98dda295b3e553cd6e707993efe08b)
+        ;
+
+        
+    
+    
+                marker_d000bc5dd9341f8c0862bc15a9a388d4.setIcon(icon_1e38b4c9418c81a041cd39562fe45f46);
+            
+    
+            var marker_b03d204574b8ff9a3a31e844c977d553 = L.marker(
+                [41.89789513, -87.62409661],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_a5853ca8cf6bc9adb0d3ecf3b210fc3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fcdf92d84dafffc56c61ceb137623460 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c2888a715125a0d82d0acee09163169 = $(`<div id="html_2c2888a715125a0d82d0acee09163169" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 15-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.89789513, Longitude: -87.62409661             </div>`)[0];
+                popup_fcdf92d84dafffc56c61ceb137623460.setContent(html_2c2888a715125a0d82d0acee09163169);
+            
+        
+
+        marker_b03d204574b8ff9a3a31e844c977d553.bindPopup(popup_fcdf92d84dafffc56c61ceb137623460)
+        ;
+
+        
+    
+    
+                marker_b03d204574b8ff9a3a31e844c977d553.setIcon(icon_a5853ca8cf6bc9adb0d3ecf3b210fc3d);
+            
+    
+            var marker_6de288beb22b54d076fcb04d8461c0d8 = L.marker(
+                [41.89789513, -87.62409661],
+                {
+}
+            ).addTo(map_cc46e9bd177593cf152350d7fd35a1b0);
+        
+    
+            var icon_3420a5cd7322c0325db8d338c66735d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7361b88cbc676a44d095081927ee81c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0e0bae55eb0bcb91d846c85a85dde3d9 = $(`<div id="html_0e0bae55eb0bcb91d846c85a85dde3d9" style="width: 100.0%; height: 100.0%;">                 📍 <b>Crime Forecast</b><br>                 📅 16-09-2024<br>                 🔢 Predicted: 1.00<br>                 🔍 Top Type: THEFT<br>                 📍 Location: Latitude: 41.89789513, Longitude: -87.62409661             </div>`)[0];
+                popup_c7361b88cbc676a44d095081927ee81c.setContent(html_0e0bae55eb0bcb91d846c85a85dde3d9);
+            
+        
+
+        marker_6de288beb22b54d076fcb04d8461c0d8.bindPopup(popup_c7361b88cbc676a44d095081927ee81c)
+        ;
+
+        
+    
+    
+                marker_6de288beb22b54d076fcb04d8461c0d8.setIcon(icon_3420a5cd7322c0325db8d338c66735d5);
+            
+</script>
+</html>

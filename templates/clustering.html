@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crime Data Clustering</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3JpbWV8ZW58MHx8MHx8fDA%3D');
+      background-size: cover;
+      background-position: center;
+      color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+    .container {
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
+    .card {
+      background-color: rgba(30, 30, 30, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+    label, input, select, ul li {
+      color: #e0e0e0;
+    }
+    ul li strong {
+      color: #0dcaf0; /* This is added: heading color inside list items */
+    }
+    .form-control {
+      background-color: #2c2c2c;
+      border: 1px solid #555;
+      color: #fff;
+    }
+    .form-control:focus {
+      background-color: #333;
+      color: #fff;
+      border-color: #17c964;
+    }
+    .btn-primary {
+      background-color: #17c964;
+      border: none;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: #13a555;
+    }
+    h1 {
+      color: #ffc107;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+    h3 {
+      color: #0dcaf0;
+      font-weight: 600;
+    }
+    h4 {
+      color: #ff4c4c;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 3px solid #444;
+      border-radius: 10px;
+    }
+    .alert-danger {
+      background-color: rgba(220, 53, 69, 0.9);
+      border: none;
+      color: white;
+    }
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .navbar-brand, .nav-link {
+      color: #ffc107 !important;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1 class="text-center">Crime Data Clustering and Prevention</h1>
+    
+    <form method="POST" class="mt-4">
+      <div class="mb-3">
+        <label for="area" class="form-label">Select Area</label>
+        <select class="form-control" id="area" name="area" required onchange="this.form.submit()">
+          <option value="">-- Select Area --</option>
+          {% for a in areas %}
+            <option value="{{ a }}" {% if selected_area == a %}selected{% endif %}>{{ a.title() }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      {% if wards %}
+      <div class="mb-3">
+        <label for="ward" class="form-label">Select Ward</label>
+        <select class="form-control" id="ward" name="ward" required>
+          <option value="">-- Select Ward --</option>
+          {% for w in wards %}
+            <option value="{{ w }}" {% if request.form.ward == w %}selected{% endif %}>{{ w }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      {% endif %}
+      <div class="mb-3">
+        <label for="crime_type" class="form-label">Crime Type</label>
+        <input type="text" class="form-control" id="crime_type" name="crime_type" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+      </div>
+      
+      {% if selected_area and wards %}
+        <button type="submit" class="btn btn-primary">Analyze Crime Data</button>
+      {% endif %}
+    </form>
+
+    {% if result %}
+      {% if result.error %}
+        <div class="alert alert-danger mt-4">{{ result.error }}</div>
+      {% else %}
+        <div class="card mt-4 p-3">
+          <h4>Results for {{ result.area }}, Ward {{ result.ward }}</h4>
+          <ul>
+            <li><strong>Predicted Crime Risk:</strong> {{ result.crime_risk }}</li>
+            <li><strong>Primary Crime Type:</strong> {{ result.primary_crime_type }}</li>
+            <li><strong>Arrest Rate:</strong> {{ result.arrest_rate }}</li>
+            <li><strong>Poverty Level:</strong> {{ result.poverty }}</li>
+            <li><strong>Education Level:</strong> {{ result.education }}</li>
+            <li><strong>Job Opportunities:</strong> {{ result.jobs }}</li>
+            <li><strong>Distance to Nearest Hotspot:</strong> {{ result.hotspot_distance }}</li>
+            <li><strong>Total Crimes:</strong> {{ result.total_crimes }}</li>
+            <li><strong>Is Violent:</strong> {{ result.is_violent }}</li>
+            <li><strong>Arrest Made:</strong> {{ result.arrest }}</li>
+            <li><strong>Poverty Index:</strong> {{ result.poverty_index }}</li>
+            <li><strong>Stress Index:</strong> {{ result.stress_index }}</li>
+            <li><strong>Occurred at Night:</strong> {{ result.is_night }}</li>
+            <li><strong>Occurred on Weekend:</strong> {{ result.is_weekend }}</li>
+          </ul>
+
+          {% if strategy %}
+            <h4>Suggested Crime Prevention Strategy</h4>
+            <div class="alert alert-success mt-3" style="background-color: rgba(40, 167, 69, 0.8); border: none; color: #fff; font-size: 1.2rem; font-weight: bold;">
+              {{ strategy }}
+            </div>
+          {% endif %}
+          
+        </div>
+
+        {% if plot_path %}
+          <div class="mt-4">
+            <h4>Crime Location Visualization</h4>
+            <img src="{{ url_for('static', filename='plot.png') }}?t={{ timestamp }}" alt="Clustering Plot">
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

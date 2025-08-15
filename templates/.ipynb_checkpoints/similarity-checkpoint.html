@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crime Similarity Finder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3JpbWV8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .result-box { 
+            margin-top: 20px;
+        }
+        label, h2, h4 {
+            color: #f8f9fa;
+        }
+        h1 {
+      color: #ffc107;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    }
+    </style>
+</head>
+<body class="container py-4">
+
+    <div class="overlay">
+        <h1 class="text-center">Crime Similarity Finder</h2>
+
+        <form id="similarityForm">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="crime_sno" class="form-label">Crime S.No</label>
+                    <select id="crime_sno" class="form-select" required>
+                        {% for sno in crime_snos %}
+                        <option value="{{ sno }}">{{ sno }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="area" class="form-label">Area</label>
+                    <select id="area" class="form-select">
+                        <option value="All">All</option>
+                        {% for area in areas %}
+                        <option value="{{ area }}">{{ area }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="quarter" class="form-label">Quarter</label>
+                    <select id="quarter" class="form-select">
+                        <option value="All">All</option>
+                        {% for quarter in quarters %}
+                        <option value="{{ quarter }}">{{ quarter }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="day" class="form-label">Day</label>
+                    <select id="day" class="form-select">
+                        <option value="All">All</option>
+                        {% for day in days %}
+                        <option value="{{ day }}">{{ day }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="hour" class="form-label">Hour</label>
+                    <select id="hour" class="form-select">
+                        <option value="All">All</option>
+                        {% for hour in hours %}
+                        <option value="{{ hour }}">{{ hour }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+
+                <div class="col-md-2">
+                    <label for="top_n" class="form-label">Top N</label>
+                    <input type="number" id="top_n" class="form-control" value="5" min="1" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Find Similar Crimes</button>
+        </form>
+
+        <div class="result-box" id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById("similarityForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                crime_sno: document.getElementById("crime_sno").value,
+                area: document.getElementById("area").value,
+                quarter: document.getElementById("quarter").value,
+                day: document.getElementById("day").value,
+                hour: document.getElementById("hour").value,
+                top_n: document.getElementById("top_n").value
+            };
+
+            fetch("/find_similar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById("results");
+                resultsDiv.innerHTML = "";
+
+                if (data.error) {
+                    resultsDiv.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+                } else {
+                    let html = "<h4>Similar Crimes:</h4><ul class='list-group'>";
+                    data.results.forEach(item => {
+                        html += `<li class='list-group-item'>
+                                    <strong>${item['Primary Type']}</strong> - ${item['Description']}<br>
+                                    <small>Area: ${item['Area']}, Quarter: ${item['Quarter']}, Day: ${item['DayOfWeek']}, Hour: ${item['Hour']}</small>
+                                </li>`;
+                    });
+                    html += "</ul>";
+                    resultsDiv.innerHTML = html;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById("results").innerHTML = `<div class="alert alert-danger">Error fetching results.</div>`;
+            });
+        });
+    </script>
+</body>
+</html>
